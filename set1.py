@@ -1,3 +1,5 @@
+#!/usr/bin/env
+
 import utils
 import binascii
 import re
@@ -110,7 +112,7 @@ def findengfromdict(inputdict):
 		tempstring = tempstring.replace("\x00", " ")
 		linescore = len(tempstring)
 		scoredict[chr_ord]=linescore
-	#print scoredict
+	print scoredict
 	outputstring = "".join([x for x in inputdict[max(scoredict, key = scoredict.get)]])
 	outputdict[chr(max(scoredict, key = scoredict.get))]= outputstring
 	return outputdict
